@@ -22,7 +22,9 @@ public class MainAppHomeWork {
 
         } else if (noJob == 2) {
             System.out.println("\nЗадание 2");
-            int a = (int) (Math.random() * 10), b = (int) (Math.random() * 10), c = (int) (Math.random() * 10);
+            int a = (int) (Math.random() * 21) - 10, b = (int) (Math.random() * 21) - 10, c = (int) (Math.random() * 21) - 10;
+
+            /*int a = (int) (Math.random() * 10), b = (int) (Math.random() * 10), c = (int) (Math.random() * 10);
             // определим знак
             if ((int) (Math.random() * 2) > 0) {
                 a = -1 * a;
@@ -32,7 +34,7 @@ public class MainAppHomeWork {
             }
             if ((int) (Math.random() * 2) > 0) {
                 c = -1 * c;
-            }
+            }*/
 
             System.out.println("Определены значения: a = " + a + ", b = " + b + ", c = " + c);
             checkSign(a, b, c);
@@ -50,8 +52,8 @@ public class MainAppHomeWork {
             compareNumbers();
         } else {
             System.out.println("\nЗадание 5");
-            addOrSubtractAndPrint((int) (Math.random() * 10), (int) (Math.random() * 10), true);
-            addOrSubtractAndPrint((int) (Math.random() * 10), (int) (Math.random() * 10), false);
+            addOrSubtractAndPrint((int) (Math.random() * 10), (int) (Math.random() * 10), Math.random() > 0.5);
+            //addOrSubtractAndPrint((int) (Math.random() * 10), (int) (Math.random() * 10), false);
         }
 
     }
