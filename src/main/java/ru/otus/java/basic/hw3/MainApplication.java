@@ -48,7 +48,9 @@ public class MainApplication {
         int sum = 0;
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
-                sum += arr[i][j];
+                if (arr[i][j] > 0 ){
+                    sum += arr[i][j];
+                }
             }
         }
         return sum;
@@ -105,9 +107,9 @@ public class MainApplication {
 //  Реализуйте метод, который считает сумму элементов второй строки двумерного массива,
 //  если второй строки не существует, то в качестве результата необходимо вернуть -1
 // Под второй строкой будем подразумевать значения массива array[1][...]
-        int sum = -1;
+        int sum = 0;
         if (array.length < 2) {
-            return sum;
+            return -1;
         }
         for (int i = 0; i < array[1].length; i++) {
             sum += array[1][i];
