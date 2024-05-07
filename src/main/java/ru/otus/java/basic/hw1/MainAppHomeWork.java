@@ -1,4 +1,4 @@
-package ru.otus.java.basic;
+package ru.otus.java.basic.hw1;
 
 import java.util.Scanner;
 
