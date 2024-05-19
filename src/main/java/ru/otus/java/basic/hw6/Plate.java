@@ -22,7 +22,7 @@ public class Plate {
     // После добавления в тарелке не может оказаться еды больше максимума
     public void addFood(int amountFood) {
 
-        if (maxAmountFood >= (curAmountFood + amountFood)) {
+        if (maxAmountFood >= curAmountFood + amountFood) {
             curAmountFood += amountFood;
             System.out.println("Еда увеличилась на " + amountFood + " единиц.");
         } else {
@@ -34,7 +34,7 @@ public class Plate {
     // (если удалось уменьшить еду так, чтобы в тарелке осталось >= 0 кусков еды,
     // то возвращаем true, в противном случае - false).
     public boolean reduceFood(int amountFood) {
-        if ((curAmountFood - amountFood) >= 0) {
+        if (curAmountFood - amountFood >= 0) {
             curAmountFood -= amountFood;
             return true;
         }
