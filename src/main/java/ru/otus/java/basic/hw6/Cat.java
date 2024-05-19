@@ -4,7 +4,8 @@ public class Cat {
     private final String name;        //имя
     private final int appetite;       //аппетит
 
-    private boolean fullness = false;   // сытость, когда создаем котов, они голодны.
+    private boolean fullness;   // сытость, когда создаем котов, они голодны.
+                                        //По-умолчанию это поле само заполнится false, можно в явном виде не писать это
 
     public String getName() {
         return name;
@@ -36,7 +37,6 @@ public class Cat {
             System.out.println(name + " хорошо покушал(-а).");
         }
         else {
-            fullness = false;
             System.out.println("В тарелке мало еды.");
         }
     }
