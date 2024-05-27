@@ -78,12 +78,12 @@ public class MainAppl {
         for (Employee listEmployees : youngestEmployee(employees)) {
             System.out.println(listEmployees.getName() + " - " + listEmployees.getAge());
         }
-
-
     }
 
-    //8. Реализуйте метод, принимающий в качестве аргумента список сотрудников, и возвращающий ссылку на самого молодого сотрудника.
-    //Несколько сотрудников может быть самых молодых
+    /**
+     * 8. Реализуйте метод, принимающий в качестве аргумента список сотрудников, и возвращающий ссылку на самого молодого сотрудника.
+     * Несколько сотрудников может быть самых молодых
+     */
     public static List<Employee> youngestEmployee(List<Employee> employees) {
         List<Employee> listYoungest = new ArrayList<>();
         int minAge = employees.get(0).getAge();
@@ -101,21 +101,25 @@ public class MainAppl {
         return listYoungest;
     }
 
-    // 7. Реализуйте метод, принимающий в качестве аргумента список сотрудников и минимальный средний возраст, и проверяющий,
-    //что средний возраст сотрудников превышает указанный аргумент;
+    /**
+     * 7. Реализуйте метод, принимающий в качестве аргумента список сотрудников и минимальный средний возраст, и проверяющий,
+     * что средний возраст сотрудников превышает указанный аргумент;
+     */
+
     public static boolean averageAgeCompare(List<Employee> employees, float minAverageAge) {
-        float AverageAge, sumAge = 0f;
+        float factAverageAge, sumAge = 0f;
 
         for (Employee e : employees) {
             sumAge += (float) e.getAge();
         }
-        AverageAge = sumAge / (float) employees.size();
-        System.out.println("Cредний возраст сотрудников = " + AverageAge);
-        return AverageAge > minAverageAge;
+        factAverageAge = sumAge / (float) employees.size();
+        return factAverageAge > minAverageAge;
     }
 
-    //6. Реализуйте метод, принимающий в качестве аргумента список сотрудников и минимальный возраст,
-    // и возвращающий список сотрудников, возраст которых больше либо равен указанному аргументу;
+    /**
+     * 6. Реализуйте метод, принимающий в качестве аргумента список сотрудников и минимальный возраст,
+     * и возвращающий список сотрудников, возраст которых больше либо равен указанному аргументу;
+     */
     public static List<Employee> getEmployeesAgeValue(List<Employee> employees, int age) {
         List<Employee> listEmployees = new ArrayList<>();
         for (Employee e : employees) {
@@ -126,7 +130,9 @@ public class MainAppl {
         return listEmployees;
     }
 
-    //5. Реализуйте метод, принимающий в качестве аргумента список сотрудников и возвращающий список их имен;
+    /**
+     * 5. Реализуйте метод, принимающий в качестве аргумента список сотрудников и возвращающий список их имен;
+     */
     public static List<String> getNamesEmployees(List<Employee> employees) {
         List<String> listEmployeeNames = new ArrayList<>();
         for (Employee employee : employees) {
@@ -135,10 +141,9 @@ public class MainAppl {
         return listEmployeeNames;
     }
 
-
-    //----------------------------- Часть 1 --------------------------------//
-
-    //4. Реализуйте метод, принимающий в качестве аргументов целое число и ссылку на список, увеличивающий каждый элемент списка на указанное число;
+    /**
+     * 4. Реализуйте метод, принимающий в качестве аргументов целое число и ссылку на список, увеличивающий каждый элемент списка на указанное число;
+     */
     public static void initListIncreaseValue(int value, List<Integer> intList) {
         int size = intList.size();
         for (int i = 0; i < size; i++) {
@@ -146,8 +151,11 @@ public class MainAppl {
         }
     }
 
-    //3. Реализуйте метод, принимающий в качестве аргументов целое число и ссылку на список,
-    // метод должен переписать каждую заполненную ячейку списка указанным числом;
+    /**
+     * 3. Реализуйте метод, принимающий в качестве аргументов целое число и ссылку на список,
+     * метод должен переписать каждую заполненную ячейку списка указанным числом;
+     */
+
     public static void initListValue(int value, List<Integer> intList) {
         int size = intList.size();
         for (int i = 0; i < size; i++) {
@@ -155,8 +163,11 @@ public class MainAppl {
         }
     }
 
-    //2. Реализуйте метод, принимающий в качестве аргумента список целых чисел, суммирующий все элементы,
-    // значение которых больше 5, и возвращающий сумму;
+    /**
+     * 2. Реализуйте метод, принимающий в качестве аргумента список целых чисел, суммирующий все элементы,
+     * значение которых больше 5, и возвращающий сумму;
+     */
+
     public static int sumList(List<Integer> intList) {
         int sum = 0;
         for (Integer elem : intList) {
@@ -167,8 +178,11 @@ public class MainAppl {
         return sum;
     }
 
-    //1. Реализуйте метод, принимающий в качестве аргументов числа min и max, и возвращающий ArrayList
-//с набором последовательных значений в указанном диапазоне (min и max включительно, шаг - 1);
+    /**
+     * 1. Реализуйте метод, принимающий в качестве аргументов числа min и max, и возвращающий ArrayList
+     * с набором последовательных значений в указанном диапазоне (min и max включительно, шаг - 1);
+     */
+
     public static List<Integer> initList(int min, int max) {
         if (max < min) {
             throw new IllegalArgumentException("Указаны не корректные входные данные.");
