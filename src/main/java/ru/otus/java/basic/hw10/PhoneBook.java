@@ -12,25 +12,22 @@ import java.util.*;
  */
 public class PhoneBook {
 
-    private Map<String, HashSet<String>> contacts = new HashMap<>();
+    private Map<String, Set<String>> contacts = new HashMap<>();
 
     public void add(Contact contact) {
         contacts.put(contact.getFio(), contact.getTelephone());
     }
 
-    public HashSet<String> find(String fio) {
+    public Set<String> find(String fio) {
         return contacts.get(fio);
 
     }
-
-    public boolean containsPhoneNumber(String telephone){
-        boolean containsTelephone = false;
-        for (String e: contacts.keySet()) {
-            if ( contacts.get(e).contains(telephone) ){
-                containsTelephone = true;
-                break;
+    public boolean containsPhoneNumber(String telephone) {
+        for (Map.Entry<String, Set<String>> e : contacts.entrySet()) {
+            if (e.getValue().contains(telephone)) {
+                return true;
             }
         }
-        return containsTelephone;
+        return false;
     }
 }

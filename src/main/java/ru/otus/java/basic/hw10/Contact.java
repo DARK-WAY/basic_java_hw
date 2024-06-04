@@ -1,10 +1,11 @@
 package ru.otus.java.basic.hw10;
 
 import java.util.HashSet;
+import java.util.Set;
 
 public class Contact {
     private final String fio;
-    private HashSet<String> telephone = new HashSet<>();
+    private Set<String> telephone = new HashSet<>();
 
     public Contact(String fio) {
         this.fio = fio;
@@ -14,7 +15,7 @@ public class Contact {
         return fio;
     }
 
-    public HashSet<String> getTelephone() {
+    public Set<String> getTelephone() {
         return telephone;
     }
 
