@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class MainAppl {
     public static void main(String[] args) {
         String directoryPath = System.getProperty("user.dir");
-        outputListFilesDirctory(directoryPath);
+        outputListFilesDirectory(directoryPath);
         printFileToConsole(directoryPath);
         writeFromConsoleToFile();
     }
@@ -84,7 +84,7 @@ public class MainAppl {
     /**
      * При старте приложения, в консоль выводится список текстовых файлов из корневого каталога проекта
      */
-    private static void outputListFilesDirctory(String directoryPath) {
+    private static void outputListFilesDirectory(String directoryPath) {
         File directory = new File(directoryPath);
         System.out.println(directory);
         if (directory.isDirectory()) {
