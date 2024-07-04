@@ -18,9 +18,8 @@ public class Client {
         Scanner scanner = new Scanner(System.in);
         String task = scanner.nextLine();
 
-        String[] parameters = taskForCalculatorIn(task);
-        for (int i = 0; i < parameters.length; i++) {
-            out.writeUTF(parameters[i]);
+        for (String parameter : taskForCalculatorIn(task)) {
+            out.writeUTF(parameter);
         }
 
         System.out.println(task + " = " + in.readUTF());
