@@ -4,7 +4,6 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Client {
@@ -24,7 +23,7 @@ public class Client {
             out.writeUTF(parameters[i]);
         }
 
-        System.out.println(task  + " = " + in.readUTF());
+        System.out.println(task + " = " + in.readUTF());
         System.out.println("Клиент отключается");
         socket.close();
 
@@ -38,8 +37,8 @@ public class Client {
         for (int i = 0; i < task.length(); i++) {
             if (task.charAt(i) == '+' || task.charAt(i) == '-' || task.charAt(i) == '*' || task.charAt(i) == '/') {
                 parameters[0] = task.substring(0, i);
-                parameters[1] = task.substring(i, i+1);
-                parameters[2] = task.substring(i + 1, task.length());
+                parameters[1] = task.substring(i, i + 1);
+                parameters[2] = task.substring(i + 1);
             }
         }
         System.out.println("argument1 = " + parameters[0] + ", argument2 = " + parameters[2] + ", знак = " + parameters[1]);

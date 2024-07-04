@@ -30,19 +30,27 @@ public class Server {
 
         System.out.println("Сервер получил задание.");
 
-        if (operation.equals("+")) {
-            result = String.valueOf(parametr1 + parametr2);
-        } else if (operation.equals("-")) {
-            result = String.valueOf(parametr1 - parametr2);
-        } else if (operation.equals("/")) {
-            if (parametr2 != 0f) {
-                result = String.valueOf(parametr1 / parametr2);
-            } else {
-                result = "Деление  на 0 -  запрещено";
-            }
-        } else if (operation.equals("*")) {
-            result = String.valueOf(parametr1 * parametr2);
-        } else result = "Не кеорректный математический знак: " + operation;
+        switch (operation) {
+            case "+":
+                result = String.valueOf(parametr1 + parametr2);
+                break;
+            case "-":
+                result = String.valueOf(parametr1 - parametr2);
+                break;
+            case "/":
+                if (parametr2 != 0f) {
+                    result = String.valueOf(parametr1 / parametr2);
+                } else {
+                    result = "Деление  на 0 -  запрещено";
+                }
+                break;
+            case "*":
+                result = String.valueOf(parametr1 * parametr2);
+                break;
+            default:
+                result = "Не кеорректный математический знак: " + operation;
+                break;
+        }
 
         out.writeUTF(result);
         System.out.println("Сервер отправилд результат.");
