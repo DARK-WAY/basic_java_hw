@@ -1,7 +1,6 @@
 package ru.otus.java.basic.hw27;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class MainAppl {
@@ -19,21 +18,23 @@ public class MainAppl {
 
     private static int numberOfMatches(String fragment, String nameFile) {
         int counter = 0;
-        int lastIdx = 0;
+        int lastIdx;
         int curIdx = 0;
+        StringBuilder strFull= new StringBuilder();
         try (BufferedReader in = new BufferedReader(new FileReader(nameFile))) {
             String str;
             while ((str = in.readLine()) != null) {
-                lastIdx = str.indexOf(fragment, curIdx);
-                while (lastIdx > 0) {
-                    counter++;
-                    curIdx = lastIdx + fragment.length();
-                    lastIdx = str.indexOf(fragment, curIdx);
-                }
+                strFull.append(str);
             }
         } catch (
                 IOException e) {
             e.printStackTrace();
+        }
+        lastIdx = strFull.indexOf(fragment, curIdx);
+        while (lastIdx > 0) {
+            counter++;
+            curIdx = lastIdx + fragment.length();
+            lastIdx = strFull.indexOf(fragment, curIdx);
         }
         return counter;
     }
