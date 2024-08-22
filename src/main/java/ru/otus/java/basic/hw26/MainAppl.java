@@ -45,7 +45,7 @@ public class MainAppl {
 
         orangeBox.moveToBox(fruitBox1);
         fruitBox1.moveToBox(fruitBox2);
-
+    
         System.out.println("fruitBox1:" + fruitBox1.info());
         System.out.println("fruitBox2:" + fruitBox2.info());
         System.out.println("appleBox:" + appleBox.info());

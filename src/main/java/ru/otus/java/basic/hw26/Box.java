@@ -18,7 +18,7 @@ public class Box<T extends Fruit> {
     public int weight() {
         int weightFruits = 0;
         for (int i = 0; i < fruits.size(); i++) {
-            weightFruits += fruits.get(0).getWeight();
+            weightFruits += fruits.get(i).getWeight();
         }
         return weightFruits;
     }
@@ -29,6 +29,7 @@ public class Box<T extends Fruit> {
 
     public boolean moveToBox(Box<? super Fruit > toBox) {
         if (fruits.isEmpty()) return false;
+        if ( this.equals(toBox) ) return false;
 
         for (T fruit : fruits) {
             toBox.add(fruit);
