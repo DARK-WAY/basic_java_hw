@@ -28,11 +28,21 @@ public class MyAppl {
             if( arr[i] == 1) countOne++;
             if( arr[i] == 2) countTwo++;
         }
-        if( countOne == 0 || countTwo== 0 ) return false;
-        return true;
+        /*if( countOne == 0 || countTwo== 0 ) return false;
+        return true;*/
+        return countOne > 0 && countTwo > 0;
     }
 
+  // оптимизация
     public static int[] getArrayAfterOne(int[] arr)  {
+        for (int i = arr.length - 1; i >= 0; i--) {
+            if (arr[i] == 1) {
+                return Arrays.copyOfRange(arr, i + 1, arr.length);
+            }
+        }
+        throw new RuntimeException("В массиве  нет 1");
+    }
+    /*public static int[] getArrayAfterOne(int[] arr)  {
 
         int[] inverted = new int[arr.length];
         int element = 0;
@@ -55,5 +65,5 @@ public class MyAppl {
             j++;
         }
         return arrayResult;
-    }
+    }*/
 }
