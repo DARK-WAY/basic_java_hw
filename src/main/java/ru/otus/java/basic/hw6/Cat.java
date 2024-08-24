@@ -1,4 +1,4 @@
-package ru.otus.java.basic.hw6;
+package src.main.java.ru.otus.java.basic.hw6;
 
 public class Cat {
     private final String name;        //имя
